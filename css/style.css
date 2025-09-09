@@ -1,0 +1,549 @@
+.PAGE {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+  padding: 24px 80px;
+  position: relative;
+  background-color: #000000;
+}
+
+.PAGE .BTN {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px;
+  align-self: stretch;
+  width: 100%;
+  background-color: #131315;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 32px;
+}
+
+.PAGE .div {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 32px;
+}
+
+.PAGE .element {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #000000;
+  border-radius: 32px;
+}
+
+.PAGE .text-wrapper {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.PAGE .div-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 32px;
+}
+
+.PAGE .button {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 1px solid;
+  border-color: #8a38f5;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 32px;
+}
+
+.PAGE .text-wrapper-2 {
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  white-space: nowrap;
+  position: relative;
+  color: #ffffff;
+  letter-spacing: 0;
+}
+
+.PAGE .CONTENT {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.PAGE .HEAD {
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+}
+
+.PAGE .HEAD-2 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+}
+
+.PAGE .text-wrapper-3 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1.00px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.PAGE .text-wrapper-4 {
+  position: relative;
+  align-self: stretch;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.PAGE .FILTERS {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px 12px;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.PAGE .ALL {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 6px;
+}
+
+.PAGE .text-wrapper-5 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.PAGE .all-wrapper {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: 1px solid;
+  border-color: #ffffff;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.PAGE .all {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.PAGE .LIST {
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+}
+
+.PAGE .element-2 {
+  flex-direction: column;
+  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+}
+
+.PAGE .WORK {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #272727;
+}
+
+.PAGE .WORK img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+
+}
+
+.PAGE .shkarupa-gleb {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 268px;
+  object-fit: cover;
+}
+
+.PAGE .frame {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 16px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #18181b;
+}
+
+.PAGE .text-wrapper-6 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Bebas Neue-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.PAGE .text-wrapper-7 {
+  position: relative;
+  align-self: stretch;
+  font-family: "Exo 2-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.PAGE .text-wrapper-8 {
+  position: relative;
+  align-self: stretch;
+  font-family: "Exo 2-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.PAGE .WORK-2 {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #272727;
+}
+
+.PAGE .group {
+  position: relative;
+  width: 262px;
+  height: 323px;
+}
+
+.PAGE .overlap-group {
+  position: relative;
+  height: 323px;
+}
+
+.PAGE .WOL {
+  position: absolute;
+  width: 95px;
+  height: 164px;
+  top: 55px;
+  left: 166px;
+  mix-blend-mode: multiply;
+}
+
+.PAGE .zbrush-wip {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Bebas Neue-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 25.9px;
+  white-space: nowrap;
+}
+
+.PAGE .span {
+  font-family: "Bebas Neue-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 25.9px;
+}
+
+.PAGE .text-wrapper-9 {
+  font-family: "Bebas Neue-Bold", Helvetica;
+  font-weight: 700;
+}
+
+.PAGE .frame-2 {
+  display: inline-flex;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+  margin-right: -15.33px;
+}
+
+.PAGE .text-wrapper-10 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Bebas Neue-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.PAGE .element-3 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  aspect-ratio: 1.33;
+  object-fit: cover;
+}
+
+.PAGE .p {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Bebas Neue-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.PAGE .frame-3 {
+  display: flex;
+  flex-wrap: wrap;
+  height: 265px;
+  align-items: flex-start;
+  gap: 0px 0px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+}
+
+.PAGE .img-3 {
+  position: relative;
+  width: 133px;
+  height: 132px;
+  object-fit: cover;
+}
+
+.PAGE .gleb-shkarupa-hand {
+  position: relative;
+  width: 133px;
+  height: 133px;
+  object-fit: cover;
+}
+
+.PAGE .gleb-shkarupa-eye {
+  position: relative;
+  width: 133px;
+  height: 133px;
+  margin-bottom: -1.00px;
+  object-fit: cover;
+}
+
+.PAGE .shkarupa-gleb-knife {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  aspect-ratio: 1.3;
+}
+
+.PAGE .img-4 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  aspect-ratio: 0.71;
+  object-fit: cover;
+}
+
+.PAGE .adam-and-eve-in-eden {
+  position: relative;
+  width: fit-content;
+  font-family: "Exo 2-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.PAGE .gleb-shkarupa-skate {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 402px;
+  object-fit: cover;
+}
+
+.PAGE .gleb-shkarupa-3 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 441px;
+  object-fit: cover;
+}
+
+.PAGE .gleb-shkarupa-main-2 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  aspect-ratio: 1.8;
+  object-fit: cover;
+}
+
+.PAGE .frame-4 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.PAGE .DD {
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.PAGE .TXT {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.PAGE .artstation-telegram {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Exo 2-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.PAGE .text-wrapper-11 {
+  font-family: "Exo 2-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+.PAGE .arrow-caret-circle {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  aspect-ratio: 1;
+}

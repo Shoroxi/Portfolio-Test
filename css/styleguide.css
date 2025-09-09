@@ -1,0 +1,27 @@
+:root {
+  --ddwa-font-family: "Abel", Helvetica;
+  --ddwa-font-weight: 400;
+  --ddwa-font-size: 24px;
+  --ddwa-letter-spacing: 0px;
+  --ddwa-line-height: normal;
+  --ddwa-font-style: normal;
+  --variable-collection-color: rgba(45, 45, 45, 1);
+  --variable-collection-d: rgba(26, 26, 26, 1);
+  --variable-collection-color-2: rgba(89, 255, 158, 1);
+  --variable-collection-YELLOW: rgba(242, 192, 69, 1);
+  --variable-collection-WHITE-GRAY: rgba(215, 215, 215, 1);
+  --variable-collection-l-RED: rgba(166, 23, 27, 1);
+  --variable-collection-d-RED: rgba(78, 0, 0, 1);
+  --variable-collection-BLACK: rgba(20, 20, 20, 1);
+  --variable-collection-BROWN: rgba(100, 39, 20, 1);
+  --light-slides-black: rgba(0, 0, 0, 1);
+  --light-slides-white: rgba(255, 255, 255, 1);
+  --light-slides-color-17: rgba(243, 107, 6, 1);
+  --ALL-REDD: rgba(241, 56, 62, 1);
+  --ALL-number: 0px;
+  --ALL-boolean: none;
+  --ALL-boolean-2: none;
+  --ALL-boolean-3: none;
+  --ALL-boolean-4: none;
+  --ALL-DARK-duplicate: rgba(35, 35, 35, 1);
+}
