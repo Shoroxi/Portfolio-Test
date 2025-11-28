@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Shkarupa Gleb</title>
+    <meta
+      name="description"
+      content="Portfolio of Shkarupa Gleb, a passionate digital artist and creative technologist with over a decade of experience in 3D art, animation, and web design."
+    />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/styleguide.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      .element {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding: 24px 80px;
+        position: relative;
+        background-color: #000000;
+      }
+
+      .element .BTN {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px;
+        align-self: stretch;
+        width: 100%;
+        background-color: #131315;
+        align-items: center;
+        position: relative;
+        flex: 0 0 auto;
+        border-radius: 32px;
+      }
+
+      .element .div1 {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        position: relative;
+        flex: 0 0 auto;
+        border-radius: 32px;
+      }
+
+      .element .element {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        position: relative;
+        flex: 0 0 auto;
+        background-color: #000000;
+        border-radius: 32px;
+      }
+
+      .element .text-wrapper {
+        position: relative;
+        width: fit-content;
+        margin-top: -1.00px;
+        font-family: "Inter-SemiBold", Helvetica;
+        font-weight: 600;
+        color: #ffffff;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .element .div-wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        position: relative;
+        flex: 0 0 auto;
+        border-radius: 32px;
+      }
+
+      .element .button {
+        all: unset;
+        box-sizing: border-box;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 8px 16px;
+        border: 1px solid;
+        border-color: #8a38f5;
+        align-items: center;
+        position: relative;
+        flex: 0 0 auto;
+        border-radius: 32px;
+      }
+
+      .element .text-wrapper {
+        position: relative;
+        width: fit-content;
+        font-family: "Inter-SemiBold", Helvetica;
+        font-weight: 600;
+        color: #ffffff;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .element .div-wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        padding: 4px 16px;
+        background-color: #000000;
+        border-radius: 32px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        align-self: stretch;
+        flex: 0 0 auto;
+      }
+
+      .element .div {
+        all: unset;
+        box-sizing: border-box;
+        flex-direction: column;
+        justify-content: center;
+        padding: 8px 16px;
+        border: 1px solid;
+        border-color: #8a38f5;
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        flex: 0 0 auto;
+        border-radius: 32px;
+      }
+
+      .element .text-wrapper-2 {
+        position: relative;
+        width: fit-content;
+        margin-top: -1.00px;
+        font-family: "Inter-SemiBold", Helvetica;
+        font-weight: 600;
+        color: #ffffff;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 16px;
+        white-space: nowrap;
+      }
+
+      .element .CONTENT {
+        flex-direction: column;
+        gap: 32px;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .element .TOP {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .element .TXT {
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        height: 170px;
+        border-radius: 12px;
+        border: 1px solid;
+        border-color: #272727;
+        background: linear-gradient(
+          0deg,
+          rgba(16, 16, 18, 1) 0%,
+          rgba(16, 16, 18, 1) 100%
+        );
+      }
+
+      .element .i {
+        display: flex;
+        align-items: flex-end;
+        gap: 24px;
+        padding: 0px 20px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        margin-top: -80px;
+      }
+
+      .element .AVA {
+        display: flex;
+        width: 169px;
+        align-items: center;
+        gap: 20px;
+        padding: 6px;
+        background-color: #101012;
+        overflow: hidden;
+        border: 1px solid;
+        border-color: #272727;
+        position: relative;
+        border-radius: 55px;
+      }
+
+      .element .AVA-2 {
+        height: 157px;
+        background-image: url(./img/AVA.png);
+        background-size: cover;
+        background-position: 50% 50%;
+        position: relative;
+        border-radius: 55px;
+      }
+
+      .element .HEAD {
+        display: flex;
+        gap: 4px;
+        flex: 1;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+      }
+
+      .element .text-wrapper-3 {
+        position: relative;
+        width: fit-content;
+        margin-top: -1.00px;
+        font-family: "Inter-Bold", Helvetica;
+        font-weight: 700;
+        color: #ffffff;
+        font-size: 32px;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .element .p {
+        position: relative;
+        align-self: stretch;
+        font-family: "Inter-Regular", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .element .l-wrapper {
+        gap: 24px;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .element .l {
+        flex-direction: column;
+        flex: 1;
+        flex-grow: 1;
+        display: flex;
+        align-items: flex-start;
+        gap: 32px;
+        position: relative;
+      }
+
+      .element .div-2 {
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: flex-start;
+        gap: 32px;
+        position: relative;
+      }
+
+      .element .HEAD-wrapper {
+        align-items: center;
+        padding: 24px;
+        flex: 1;
+        flex-grow: 1;
+        background-color: #101012;
+        border-radius: 12px;
+        border: 1px solid;
+        border-color: #272727;
+        display: flex;
+        gap: 20px;
+        position: relative;
+      }
+
+      .element .HEAD-2 {
+        display: flex;
+        gap: 12px;
+        flex: 1;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+      }
+
+      .element .text-wrapper-4 {
+        position: relative;
+        width: fit-content;
+        margin-top: -1.00px;
+        font-family: "Inter-Bold", Helvetica;
+        font-weight: 700;
+        color: #ffffff;
+        font-size: 24px;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .element .HEAD-3 {
+        display: flex;
+        gap: 16px;
+        flex: 1;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+      }
+
+      .element .FILTERS {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 12px 12px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .element .div-wrapper-2 {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 24px;
+        position: relative;
+        flex: 0 0 auto;
+        background-color: #ffffff;
+        border-radius: 6px;
+      }
+
+      .element .text-wrapper-5 {
+        position: relative;
+        width: fit-content;
+        margin-top: -1.00px;
+        font-family: "Inter-Medium", Helvetica;
+        font-weight: 500;
+        color: #000000;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: normal;
+        white-space: nowrap;
+      }
+
+      .element .div-3 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 24px;
+        align-self: stretch;
+        width: 100%;
+        background-color: #101012;
+        border-radius: 12px;
+        border: 1px solid;
+        border-color: #272727;
+        justify-content: center;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .element .HEAD-4 {
+        display: inline-flex;
+        gap: 8px;
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+      }
+
+      .element .text-wrapper-6 {
+        position: relative;
+        width: fit-content;
+        font-family: "Inter-Regular", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .element .div-4 {
+        align-items: flex-start;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        display: flex;
+        gap: 20px;
+        position: relative;
+      }
+
+      .element .HEAD-5 {
+        display: flex;
+        gap: 8px;
+        flex: 1;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+      }
+
+      .element .text-wrapper-7 {
+        position: relative;
+        width: fit-content;
+        margin-top: -1.00px;
+        font-family: "Inter-Bold", Helvetica;
+        font-weight: 700;
+        color: #ffffff;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: normal;
+        white-space: nowrap;
+      }
+
+      .element .frame-2 {
+        display: flex;
+        gap: 10px;
+        padding: 12px 16px;
+        width: 100%;
+        background-color: #09090b;
+        border-radius: 8px;
+        border: 1px solid;
+        border-color: #252528;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        align-self: stretch;
+        flex: 0 0 auto;
+      }
+
+      .element .text-wrapper-8 {
+        position: relative;
+        flex: 1;
+        margin-top: -1.00px;
+        font-family: "Inter-Regular", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .element .HEAD-6 {
+        display: flex;
+        gap: 8px;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+      }
+
+      .element .frame-3 {
+        display: flex;
+        height: 143px;
+        padding: 12px 16px;
+        align-self: stretch;
+        width: 100%;
+        background-color: #09090b;
+        align-items: flex-start;
+        gap: 10px;
+        position: relative;
+        border-radius: 8px;
+        border: 1px solid;
+        border-color: #252528;
+      }
+
+      .element .frame-4 {
+        display: inline-flex;
+        padding: 16px;
+        flex: 0 0 auto;
+        background-color: #ffffff;
+        align-items: flex-start;
+        gap: 10px;
+        position: relative;
+        border-radius: 8px;
+        border: 1px solid;
+        border-color: #252528;
+      }
+
+      .element .text-wrapper-9 {
+        position: relative;
+        width: fit-content;
+        margin-top: -1.00px;
+        font-family: "Inter-Regular", Helvetica;
+        font-weight: 400;
+        color: #000000;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+      /* Original CSS code should be injected here */
+
+      /* Additional styles for semantic HTML elements and accessibility improvements */
+
+      .element .frame {
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+      }
+
+      .element .frame:hover,
+      .element .frame:focus {
+        opacity: 0.8;
+      }
+
+      .element .div-wrapper {
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+      }
+
+      .element .div-wrapper:hover,
+      .element .div-wrapper:focus {
+        opacity: 0.8;
+      }
+
+      .element .AVA-2 {
+        width: 100%;
+        height: 157px;
+        object-fit: cover;
+        border-radius: 55px;
+      }
+
+      .element .div-wrapper-2 {
+        all: unset;
+        box-sizing: border-box;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 24px;
+        position: relative;
+        flex: 0 0 auto;
+        background-color: #ffffff;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .element .div-wrapper-2:hover {
+        background-color: #f0f0f0;
+      }
+
+      .element .div-wrapper-2:focus {
+        outline: 2px solid #4a90e2;
+        outline-offset: 2px;
+      }
+
+      .element .div-wrapper-2[aria-pressed="true"] {
+        background-color: #8a38f5;
+      }
+
+      .element .div-wrapper-2[aria-pressed="true"] .text-wrapper-5 {
+        color: #ffffff;
+      }
+
+      .element .contact-form {
+        display: contents;
+      }
+
+      .element .frame-2 {
+        all: unset;
+        box-sizing: border-box;
+        display: flex;
+        gap: 10px;
+        padding: 12px 16px;
+        width: 100%;
+        background-color: #09090b;
+        border-radius: 8px;
+        border: 1px solid;
+        border-color: #252528;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        align-self: stretch;
+        flex: 0 0 auto;
+        font-family: "Inter-Regular", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .element .frame-2:focus {
+        outline: 2px solid #4a90e2;
+        outline-offset: 2px;
+        border-color: #4a90e2;
+      }
+
+      .element .frame-2::placeholder {
+        color: #666666;
+      }
+
+      .element .frame-3 {
+        all: unset;
+        box-sizing: border-box;
+        display: flex;
+        height: 143px;
+        padding: 12px 16px;
+        align-self: stretch;
+        width: 100%;
+        background-color: #09090b;
+        align-items: flex-start;
+        gap: 10px;
+        position: relative;
+        border-radius: 8px;
+        border: 1px solid;
+        border-color: #252528;
+        font-family: "Inter-Regular", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: normal;
+        resize: vertical;
+        min-height: 143px;
+      }
+
+      .element .frame-3:focus {
+        outline: 2px solid #4a90e2;
+        outline-offset: 2px;
+        border-color: #4a90e2;
+      }
+
+      .element .frame-3::placeholder {
+        color: #666666;
+      }
+
+      .element .frame-4 {
+        all: unset;
+        box-sizing: border-box;
+        display: inline-flex;
+        padding: 16px;
+        flex: 0 0 auto;
+        background-color: #ffffff;
+        align-items: flex-start;
+        gap: 10px;
+        position: relative;
+        border-radius: 8px;
+        border: 1px solid;
+        border-color: #252528;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .element .frame-4:hover {
+        background-color: #f0f0f0;
+      }
+
+      .element .frame-4:focus {
+        outline: 2px solid #4a90e2;
+        outline-offset: 2px;
+      }
+
+      .element .frame-4:active {
+        transform: translateY(1px);
+      }
+
+    </style>
+  </head>
+
+
+  <body>
+    <div class="element">
+
+      <header class="BTN">
+        <nav class="div1">
+          <div class="element"><a href="index.html" class="text-wrapper">Portfolio</a></div>
+          <div class="div-wrapper"><a href="rezume.html" class="text-wrapper">Profile</a></div>
+        </nav>
+        <button class="button"><a href="rezume.html" class="text-wrapper-2">Contact me</a></button>
+      </header>
+
+      <main class="CONTENT">
+        <section class="TOP">
+          <div class="TXT" role="img" aria-label="Creative background illustration"></div>
+          <div class="i">
+            <div class="AVA">
+              <img src="./img/AVA.png" alt="Profile photo of Shkarupa Gleb" class="AVA-2" />
+            </div>
+            <header class="HEAD">
+              <h1 class="text-wrapper-3">Shkarupa Gleb</h1>
+              <p class="p">Creative Technologist &amp; Digital Artist</p>
+            </header>
+          </div>
+        </section>
+        <div class="l-wrapper">
+          <div class="l">
+            <section class="div-2">
+              <article class="HEAD-wrapper">
+                <div class="HEAD-2">
+                  <h2 class="text-wrapper-4">About Me</h2>
+                  <p class="p">
+                    I&#39;m a passionate digital artist and creative technologist with over a decade of experience in 3D
+                    art, animation, and web design. My work explores the intersection of technology and art, creating
+                    immersive experiences and telling compelling stories. <br />
+                    <br />I thrive on bringing ideas to life, whether it&#39;s through a complex 3D model, an intuitive
+                    user interface, or an engaging animation. I am constantly learning and exploring new tools to push
+                    the boundaries of my creativity.
+                  </p>
+                </div>
+              </article>
+            </section>
+            <section class="div-2">
+              <article class="HEAD-wrapper">
+                <div class="HEAD-3">
+                  <h2 class="text-wrapper-4">Hard Skills</h2>
+                  <div class="FILTERS" role="group" aria-label="Hard skills filter">
+                    <button type="button" class="div-wrapper-2" aria-pressed="true">
+                      <span class="text-wrapper-5">All</span>
+                    </button>
+                    <button type="button" class="div-wrapper-2" aria-pressed="false">
+                      <span class="text-wrapper-5">3D Art</span>
+                    </button>
+                    <button type="button" class="div-wrapper-2" aria-pressed="false">
+                      <span class="text-wrapper-5">Web Design</span>
+                    </button>
+                    <button type="button" class="div-wrapper-2" aria-pressed="false">
+                      <span class="text-wrapper-5">Animation</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+              <article class="HEAD-wrapper">
+                <div class="HEAD-3">
+                  <h2 class="text-wrapper-4">Soft Skills</h2>
+                  <div class="FILTERS" role="group" aria-label="Soft skills filter">
+                    <button type="button" class="div-wrapper-2" aria-pressed="true">
+                      <span class="text-wrapper-5">All</span>
+                    </button>
+                    <button type="button" class="div-wrapper-2" aria-pressed="false">
+                      <span class="text-wrapper-5">3D Art</span>
+                    </button>
+                    <button type="button" class="div-wrapper-2" aria-pressed="false">
+                      <span class="text-wrapper-5">Web Design</span>
+                    </button>
+                    <button type="button" class="div-wrapper-2" aria-pressed="false">
+                      <span class="text-wrapper-5">Animation</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </section>
+            <section class="div-3">
+              <header class="HEAD-4">
+                <h2 class="text-wrapper-4">Get in Touch</h2>
+                <p class="text-wrapper-6">Have a project in mind or just want to say hi? Fill out the form below.</p>
+              </header>
+              <form class="contact-form">
+                <div class="div-4">
+                  <div class="HEAD-5">
+                    <label for="name" class="text-wrapper-7">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="frame-2"
+                      placeholder="Have a proj"
+                      required
+                      aria-required="true"
+                    />
+                  </div>
+                  <div class="HEAD-5">
+                    <label for="email" class="text-wrapper-7">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="frame-2"
+                      placeholder="Have a p"
+                      required
+                      aria-required="true"
+                    />
+                  </div>
+                </div>
+                <div class="HEAD-6">
+                  <label for="message" class="text-wrapper-7">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="frame-3"
+                    placeholder="Have a proj"
+                    required
+                    aria-required="true"
+                  ></textarea>
+                </div>
+                <button type="button" class="frame-4" id="sendBtn">
+                  <span class="text-wrapper-9">Send Message</span>
+                </button>
+              </form>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/app.js"></script>
+
+
+  </body>
+</html>

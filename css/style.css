@@ -543,7 +543,28 @@
 
 .PAGE .arrow-caret-circle {
   position: relative;
-  width: 72px;
-  height: 72px;
+  width: 56px;
+  height: 56px;
   aspect-ratio: 1;
 }
+
+.status-message {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  text-align: center;
+}
+
+.status-message.success {
+  color: #2ecc71;
+}
+
+.status-message.error {
+  color: #e74c3c;
+}
+
+.status-message.sending {
+  color: #999;
+}
+
