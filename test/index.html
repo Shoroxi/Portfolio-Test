@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sharhex Tests Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/test.css" />
+  </head>
+  <body>
+    <div class="test-page">
+      <header class="test-header">
+        <div>
+          <p class="test-label">Sharhex Skill Hub</p>
+          <h1 class="test-title">Проверка знаний 3D</h1>
+          <p class="test-subtitle">
+            Выберите тему, отслеживайте прогресс и оттачивайте навыки.
+          </p>
+        </div>
+        <div class="header-actions">
+          <a class="ghost-btn" href="../index.html">← Вернуться к портфолио</a>
+        </div>
+      </header>
+
+      <main class="test-layout">
+        <section class="test-hub" aria-label="Доступные тесты">
+          <h2 class="section-title">Центр тестов</h2>
+          <div class="test-list" id="testList">
+            <article class="test-card" data-test-card="3d-basics">
+              <div class="test-card-header">
+                <h3 class="test-card-title">Основы 3D</h3>
+                <span class="badge">Начинающий</span>
+              </div>
+              <p class="test-card-desc">
+                Разминка с основными концепциями 3D моделирования и рендеринга.
+              </p>
+              <div class="test-meta">
+                <span>8 вопросов · ~4 мин</span>
+                <span>Вопросов: 8</span>
+              </div>
+              <div class="results-actions">
+                <button class="pill-btn" data-action="preview" type="button">Предпросмотр</button>
+                <a class="primary-btn" data-action="start" href="?test=3d-basics">Начать</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="test-workspace" aria-live="polite" id="workspace">
+          <div class="workspace-placeholder">
+            <p class="workspace-label">Готов когда вы готовы</p>
+            <h3>Выберите тест для начала</h3>
+            <p>
+              Прогресс, результаты и повторные прохождения будут отображаться здесь. Все тесты следуют
+              единому упрощенному потоку для быстрых итераций.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./js/test.js"></script>
+  </body>
+</html>
+

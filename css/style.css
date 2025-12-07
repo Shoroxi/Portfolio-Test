@@ -568,3 +568,233 @@
   color: #999;
 }
 
+/* ==========================================================================
+   Mobile Responsive Styles
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+  /* Основной контейнер */
+  .PAGE {
+    padding: 16px 20px 40px !important;
+    gap: 24px !important;
+  }
+
+  /* Навигация */
+  .top-nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 24px;
+  }
+
+  .top-nav .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-brand {
+    font-size: 18px;
+    letter-spacing: 0.2em;
+  }
+
+  /* Заголовок и фильтры */
+  .PAGE .HEAD {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .PAGE .HEAD-2 {
+    width: 100%;
+  }
+
+  .PAGE .text-wrapper-3 {
+    font-size: 28px !important;
+  }
+
+  .PAGE .text-wrapper-4 {
+    font-size: 14px !important;
+  }
+
+  .PAGE .FILTERS {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .PAGE .filter-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+    flex: 1;
+    min-width: auto;
+  }
+
+  /* Сетка портфолио - одна колонка на мобильных */
+  .PAGE .LIST {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .PAGE .element-2 {
+    width: 100%;
+  }
+
+  /* Карточки работ */
+  .PAGE .WORK,
+  .PAGE .WORK-2 {
+    border-radius: 12px;
+  }
+
+  .PAGE .frame {
+    padding: 12px;
+  }
+
+  .PAGE .text-wrapper-6,
+  .PAGE .text-wrapper-10 {
+    font-size: 20px !important;
+  }
+
+  .PAGE .text-wrapper-7,
+  .PAGE .text-wrapper-8 {
+    font-size: 14px !important;
+  }
+
+  /* CTA блок */
+  .PAGE .test-cta {
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .PAGE .cta-title {
+    font-size: 24px !important;
+  }
+
+  .PAGE .cta-text {
+    font-size: 14px;
+  }
+
+  .PAGE .cta-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Футер */
+  .PAGE .DD {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .PAGE .TXT {
+    width: 100%;
+  }
+
+  .PAGE .artstation-telegram {
+    font-size: 14px !important;
+    white-space: normal;
+    line-height: 1.6;
+  }
+
+  .PAGE .arrow-caret-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Специфичные изображения */
+  .PAGE .shkarupa-gleb {
+    height: auto;
+    min-height: 200px;
+  }
+
+  .PAGE .gleb-shkarupa-skate {
+    height: auto;
+    min-height: 250px;
+  }
+
+  .PAGE .gleb-shkarupa-3 {
+    height: auto;
+    min-height: 250px;
+  }
+
+  /* Группа изображений */
+  .PAGE .frame-3 {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .PAGE .img-3,
+  .PAGE .gleb-shkarupa-hand,
+  .PAGE .gleb-shkarupa-eye {
+    width: 50%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  /* Специальные элементы */
+  .PAGE .group {
+    width: 100%;
+    height: auto;
+  }
+
+  .PAGE .overlap-group {
+    height: auto;
+    position: relative;
+  }
+
+  .PAGE .WOL {
+    position: relative;
+    width: auto;
+    height: auto;
+    top: auto;
+    left: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .PAGE {
+    padding: 12px 16px 32px !important;
+    gap: 20px !important;
+  }
+
+  .top-nav {
+    padding: 10px 12px;
+  }
+
+  .nav-brand {
+    font-size: 16px;
+    letter-spacing: 0.15em;
+  }
+
+  .PAGE .text-wrapper-3 {
+    font-size: 24px !important;
+  }
+
+  .PAGE .FILTERS {
+    gap: 6px;
+  }
+
+  .PAGE .filter-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .PAGE .text-wrapper-6,
+  .PAGE .text-wrapper-10 {
+    font-size: 18px !important;
+  }
+
+  .PAGE .cta-title {
+    font-size: 20px !important;
+  }
+
+  .PAGE .artstation-telegram {
+    font-size: 12px !important;
+  }
+
+  .PAGE .arrow-caret-circle {
+    width: 32px;
+    height: 32px;
+  }
+}
+

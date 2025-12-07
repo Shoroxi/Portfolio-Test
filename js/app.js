@@ -1,11 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Инициализация EmailJS
-  emailjs.init("LpYfXstzwJbxsoJsg");
+  initContactForm();
+  initPortfolioFilters();
+});
 
+function initContactForm() {
   const sendBtn = document.getElementById("sendBtn");
   const form = document.querySelector(".contact-form");
 
-  if (!sendBtn || !form) return;
+  if (!sendBtn || !form) {
+    return;
+  }
+
+  if (typeof emailjs === "undefined") {
+    console.warn("EmailJS is not available on this page.");
+    return;
+  }
+
+  emailjs.init("LpYfXstzwJbxsoJsg");
 
   sendBtn.addEventListener("click", async function (e) {
     e.preventDefault(); // ОТМЕНА обновления страницы
@@ -54,4 +65,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
     form.appendChild(msg);
   }
-});
+}
+
+function initPortfolioFilters() {
+  const filterButtons = document.querySelectorAll("[data-filter]");
+  const workCards = document.querySelectorAll("[data-tags]");
+
+  if (!filterButtons.length || !workCards.length) {
+    return;
+  }
+
+  const applyFilter = (filter) => {
+    workCards.forEach((card) => {
+      const tags = card.dataset.tags
+        .split(",")
+        .map((tag) => tag.trim().toLowerCase());
+      const shouldShow = filter === "all" || tags.includes(filter);
+      card.classList.toggle("is-hidden", !shouldShow);
+    });
+  };
+
+  const setActiveButton = (activeButton) => {
+    filterButtons.forEach((btn) => {
+      btn.classList.toggle("is-active", btn === activeButton);
+    });
+  };
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("is-active")) {
+        return;
+      }
+
+      setActiveButton(btn);
+      applyFilter(btn.dataset.filter);
+    });
+  });
+
+  const initialButton =
+    document.querySelector(".filter-btn.is-active") || filterButtons[0];
+  applyFilter(initialButton ? initialButton.dataset.filter : "all");
+}

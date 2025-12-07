@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shkarupa Gleb</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/styleguide.css" />
   <link rel="stylesheet" href="css/style.css" />
@@ -30,23 +36,30 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 24px;
-      padding: 24px 80px;
+      gap: 32px;
+      padding: 32px 80px 80px;
       position: relative;
-      background-color: #000000;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, rgba(155, 91, 255, 0.2), transparent 55%),
+        radial-gradient(circle at 20% 20%, rgba(0, 225, 255, 0.1), transparent 35%),
+        var(--bg-primary);
     }
 
 .PAGE .BTN {
   display: flex;
   justify-content: space-between;
-  padding: 6px;
+  padding: 12px 16px;
   align-self: stretch;
   width: 100%;
-  background-color: #131315;
+  background-color: rgba(18, 18, 20, 0.85);
+  backdrop-filter: blur(18px);
   align-items: center;
-  position: relative;
-  flex: 0 0 auto;
-  border-radius: 32px;
+  position: sticky;
+  top: 24px;
+  z-index: 2;
+  border-radius: 40px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
 }
 
 .PAGE .div1 {
@@ -58,6 +71,24 @@
   border-radius: 32px;
 }
 
+.PAGE .nav-pill {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.PAGE .nav-pill.is-active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-color);
+}
+
+.PAGE .nav-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .PAGE .element {
   display: inline-flex;
   flex-direction: column;
@@ -66,8 +97,9 @@
   padding: 8px 16px;
   position: relative;
   flex: 0 0 auto;
-  background-color: #000000;
-  border-radius: 32px;
+  background-color: transparent;
+  border-radius: 999px;
+  border: 1px solid transparent;
 }
 
 .PAGE .text-wrapper {
@@ -90,7 +122,8 @@
   padding: 8px 16px;
   position: relative;
   flex: 0 0 auto;
-  border-radius: 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .PAGE .button {
@@ -179,61 +212,78 @@
 .PAGE .FILTERS {
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 12px 12px;
+  gap: 12px;
   display: inline-flex;
   position: relative;
   flex: 0 0 auto;
 }
 
-.PAGE .ALL {
+.PAGE .filter-btn {
+  all: unset;
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 12px 20px;
-  position: relative;
-  flex: 0 0 auto;
-  background-color: #ffffff;
-  border-radius: 6px;
-}
-
-.PAGE .text-wrapper-5 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1.00px;
-  font-family: "Inter-Medium", Helvetica;
-  font-weight: 500;
-  color: #000000;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.PAGE .all-wrapper {
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
   padding: 12px 20px;
   border-radius: 6px;
-  border: 1px solid;
-  border-color: #ffffff;
-  display: inline-flex;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.PAGE .all {
-  position: relative;
-  width: fit-content;
-  margin-top: -1.00px;
+  border: 1px solid #ffffff;
   font-family: "Inter-Medium", Helvetica;
   font-weight: 500;
   color: #ffffff;
   font-size: 16px;
   letter-spacing: 0;
   line-height: normal;
-  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.PAGE .filter-btn.is-active {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.PAGE .test-cta {
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 32px;
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  background: linear-gradient(135deg, rgba(155, 91, 255, 0.25), rgba(5, 5, 5, 0.85));
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  flex-wrap: wrap;
+}
+
+.PAGE .cta-label {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-size: 12px;
+  margin: 0 0 8px;
+}
+
+.PAGE .cta-title {
+  font-size: 32px;
+  margin: 0;
+  font-family: "Bebas Neue-Bold", Helvetica;
+  letter-spacing: 0.04em;
+}
+
+.PAGE .cta-text {
+  color: var(--text-secondary);
+  margin: 8px 0 0;
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+.PAGE .cta-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .PAGE .LIST {
@@ -264,10 +314,15 @@
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
-  border-radius: 8px;
+  border-radius: 18px;
   overflow: hidden;
-  border: 1px solid;
-  border-color: #272727;
+  border: 1px solid var(--border-color);
+  background: var(--bg-panel);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+}
+
+.PAGE .work-card.is-hidden {
+  display: none !important;
 }
 
 .PAGE .WORK img {
@@ -296,7 +351,7 @@
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
-  background-color: #18181b;
+  background-color: var(--bg-panel-alt);
 }
 
 .PAGE .text-wrapper-6 {
@@ -335,7 +390,7 @@
 }
 
 .PAGE .WORK-2 {
-  background-color: #ffffff;
+  background-color: var(--bg-panel);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -343,10 +398,9 @@
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
-  border-radius: 8px;
+  border-radius: 18px;
   overflow: hidden;
-  border: 1px solid;
-  border-color: #272727;
+  border: 1px solid var(--border-color);
 }
 
 .PAGE .group {
@@ -576,6 +630,199 @@
   aspect-ratio: 1;
 }
 
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .PAGE {
+    padding: 16px 20px 40px;
+    gap: 24px;
+  }
+
+  .top-nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .top-nav .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-brand {
+    font-size: 18px;
+    letter-spacing: 0.2em;
+  }
+
+  /* Fix navigation pill buttons size on mobile */
+  .top-nav .element,
+  .top-nav .div-wrapper {
+    padding: 8px 16px !important;
+    min-height: auto !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+
+  .top-nav .element:active,
+  .top-nav .div-wrapper:active,
+  .top-nav .element:focus,
+  .top-nav .div-wrapper:focus {
+    transform: none !important;
+    scale: 1 !important;
+    padding: 8px 16px !important;
+  }
+
+  .PAGE .HEAD {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .PAGE .text-wrapper-3 {
+    font-size: 28px;
+  }
+
+  .PAGE .text-wrapper-4 {
+    font-size: 14px;
+  }
+
+  .PAGE .FILTERS {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .PAGE .filter-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .PAGE .LIST {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .PAGE .element-2 {
+    width: 100%;
+  }
+
+  .PAGE .test-cta {
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .PAGE .cta-title {
+    font-size: 24px;
+  }
+
+  .PAGE .cta-text {
+    font-size: 14px;
+  }
+
+  .PAGE .DD {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .PAGE .artstation-telegram {
+    font-size: 14px;
+    white-space: normal;
+    line-height: 1.6;
+  }
+
+  .PAGE .arrow-caret-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .PAGE .shkarupa-gleb {
+    height: auto;
+    min-height: 200px;
+  }
+
+  .PAGE .gleb-shkarupa-skate,
+  .PAGE .gleb-shkarupa-3 {
+    height: auto;
+    min-height: 250px;
+  }
+
+  .PAGE .frame-3 {
+    height: auto;
+  }
+
+  .PAGE .img-3,
+  .PAGE .gleb-shkarupa-hand,
+  .PAGE .gleb-shkarupa-eye {
+    width: 50%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .PAGE {
+    padding: 12px 16px 32px;
+    gap: 20px;
+  }
+
+  .top-nav {
+    padding: 10px 12px;
+  }
+
+  .nav-brand {
+    font-size: 16px;
+    letter-spacing: 0.15em;
+  }
+
+  /* Fix navigation pill buttons size on small mobile */
+  .top-nav .element,
+  .top-nav .div-wrapper {
+    padding: 8px 12px !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .top-nav .element:active,
+  .top-nav .div-wrapper:active,
+  .top-nav .element:focus,
+  .top-nav .div-wrapper:focus {
+    transform: none !important;
+    scale: 1 !important;
+    padding: 8px 12px !important;
+  }
+
+  .PAGE .text-wrapper-3 {
+    font-size: 24px;
+  }
+
+  .PAGE .filter-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .PAGE .text-wrapper-6,
+  .PAGE .text-wrapper-10 {
+    font-size: 18px;
+  }
+
+  .PAGE .cta-title {
+    font-size: 20px;
+  }
+
+  .PAGE .artstation-telegram {
+    font-size: 12px;
+  }
+
+  .PAGE .arrow-caret-circle {
+    width: 32px;
+    height: 32px;
+  }
+}
+
   </style>
 
 </head>
@@ -583,12 +830,12 @@
   <body>
     <div class="PAGE">
 
-      <div class="BTN">
-        <div class="div1">
-          <div class="element"><a href="index.html" class="text-wrapper">Portfolio</a></div>
-          <div class="div-wrapper"><a href="rezume.html" class="text-wrapper">Profile</a></div>
+      <div class="top-nav">
+        <div class="nav-links">
+          <div class="element nav-pill is-active"><a href="index.html" class="text-wrapper">Portfolio</a></div>
+          <div class="div-wrapper nav-pill"><a href="rezume.html" class="text-wrapper">Profile</a></div>
         </div>
-        <button class="button"><a href="rezume.html" class="text-wrapper-2">Contact me</a></button>
+        <div class="nav-brand">SHARHEX LAB</div>
       </div>
 
       <div class="CONTENT">
@@ -597,48 +844,48 @@
             <div class="text-wrapper-3">My Works</div>
             <p class="text-wrapper-4">Archive of my projects and works</p>
           </div>
-          <div class="FILTERS">
-            <div class="ALL"><div class="text-wrapper-5">All</div></div>
-            <div class="all-wrapper"><div class="all">3D Art</div></div>
-            <div class="all-wrapper"><div class="all">Web Design</div></div>
-            <div class="all-wrapper"><div class="all">Other</div></div>
+          <div class="FILTERS" id="portfolioFilters">
+            <button class="filter-btn is-active" type="button" data-filter="all">All</button>
+            <button class="filter-btn" type="button" data-filter="3d">3D Art</button>
+            <button class="filter-btn" type="button" data-filter="web">Web Design</button>
+            <button class="filter-btn" type="button" data-filter="other">Other</button>
           </div>
         </div>
         <div class="LIST">
           <div class="element-2">
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="3d">
               <img class="shkarupa-gleb" src="img/shkarupa-gleb-henshel-tiger-02 1.png" />
               <div class="frame">
                 <p class="text-wrapper-6">Tiger Henshel II | 2023</p>
                 <div class="text-wrapper-7">My first full pipeline</div>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="3d">
               <img class="img" src="img/gleb-shkarupa-untitled 1.png" />
               <div class="frame"><div class="text-wrapper-6">pixelate (wip) | 2025</div></div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="3d">
               <img class="gleb-shkarupa-pony" src="img/gleb-shkarupa-pony-render.png" />
               <div class="frame">
                 <div class="text-wrapper-6">vampire pony | 2023</div>
                 <p class="text-wrapper-7">My first job at Zbrush</p>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="other">
               <img class="image" src="img/image 35.png" />
               <div class="frame">
                 <div class="text-wrapper-6">retry | 2023</div>
                 <p class="text-wrapper-8">Collaboration <br />at the Retry School</p>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="web">
               <img class="gleb-shkarupa-main" src="img/gleb-shkarupa-main-2.png" />
               <div class="frame">
                 <p class="text-wrapper-6">The Outlast Trials | 2023</p>
                 <p class="text-wrapper-8">Redesign of the official website before how it was updated.</p>
               </div>
             </div>
-            <div class="WORK-2">
+            <div class="WORK-2 work-card" data-tags="3d">
               <div class="group">
                 <div class="overlap-group">
                   <img class="WOL" src="img/WOL.png" />
@@ -658,7 +905,7 @@
                 <p class="text-wrapper-8">Several characters are being developed for the game</p>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="3d">
               <div class="frame-2">
                 <img class="PLANT" src="img/PLANT 1.png" /> <img class="image-3" src="img/image.png" />
               </div>
@@ -667,53 +914,53 @@
                 <div class="text-wrapper-8">Robot plant helper</div>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="3d">
               <img class="gleb-shkarupa" src="img/gleb-shkarupa-abc3d.png" />
               <div class="frame"><div class="text-wrapper-10">abstraction briidge | 2023</div></div>
             </div>
           </div>
           <div class="element-2">
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="3d">
               <img class="gleb-shkarupa-tz" src="img/gleb-shkarupa-tz-phone 1.png" />
               <div class="frame">
                 <div class="text-wrapper-6">like | 2023</div>
                 <p class="text-wrapper-7">The first job in a blender for TK</p>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="3d">
               <img class="img-2" src="img/gleb-shkarupa-hrt.png" />
               <div class="frame"><div class="text-wrapper-6">Heart | 2024</div></div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="3d">
               <img class="img-2" src="img/gleb-shkarupa-gleb-shkarupa-2023-02-06-120735697.png" />
               <div class="frame">
                 <div class="text-wrapper-6">buggz production | 2023</div>
                 <p class="text-wrapper-7">My first job at Zbrush</p>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="other">
               <img class="gleb-shkarupa-static" src="img/gleb-shkarupa-static-2 1.png" />
               <div class="frame"><p class="text-wrapper-6">Dedcat | booklet | 2022</p></div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="other">
               <img class="horse" src="img/horse2.png" />
               <div class="frame"><p class="text-wrapper-6">exhibition of ice | 2022</p></div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="3d">
               <img class="gleb-shkarupa-2" src="img/gleb-shkarupa-oqgwpg4inyq.png" />
               <div class="frame">
                 <div class="text-wrapper-6">avatars | 2024</div>
                 <div class="text-wrapper-4">🕶&nbsp;&nbsp;&nbsp;&nbsp;🔴&nbsp;&nbsp; 🚀</div>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="web">
               <img class="element-3" src="img/4.png" />
               <div class="frame">
                 <p class="p">no buy year | web interface | 2025</p>
                 <p class="text-wrapper-7">A platform for those who challenge the consumer society</p>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="other">
               <div class="frame-3">
                 <img class="img-3" src="img/gleb-shkarupa-skull 1.png" />
                 <img class="gleb-shkarupa-hand" src="img/gleb-shkarupa-hand-smyk 1.png" />
@@ -724,28 +971,28 @@
             </div>
           </div>
           <div class="element-2">
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="other">
               <img class="img-2" src="img/gleb-shkarupa-3a4c1bbddb70687d.png" />
               <div class="frame">
                 <p class="text-wrapper-6">Hidden out loud | 2024</p>
                 <div class="text-wrapper-7">Podcast cover</div>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="3d">
               <img class="shkarupa-gleb-knife" src="img/shkarupa-gleb-knife-camera-1-fullquality.png" />
               <div class="frame">
                 <div class="text-wrapper-6">Explosive knife | 2022</div>
                 <div class="text-wrapper-7">Tony Tseng concept</div>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="3d">
               <img class="img" src="img/shkarupa-gleb-with-msaa.png" />
               <div class="frame">
                 <div class="text-wrapper-6">Warehouse | 2022</div>
                 <p class="text-wrapper-7">A test task. Unity. <br />Shader - FlatKit</p>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="other">
               <img class="img-4" src="img/POSTER.png" />
               <div class="frame">
                 <div class="text-wrapper-6">3d+2d poster | 2023</div>
@@ -754,21 +1001,21 @@
                 </p>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="other">
               <img class="gleb-shkarupa-skate" src="img/gleb-shkarupa-skate-post-png 1.png" />
               <div class="frame">
                 <div class="text-wrapper-6">typo poster | 2023</div>
                 <p class="text-wrapper-8">Первый мой фулл пайплайн<br />148k tris (400k UE) - so many, i know</p>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="other">
               <img class="gleb-shkarupa-3" src="img/gleb-shkarupa-jinnsz88vvy 1.png" />
               <div class="frame">
                 <div class="text-wrapper-6">gpt posters | 2023</div>
                 <p class="text-wrapper-8">Posters for working<br />at the ReTry School</p>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="web">
               <img class="img-4" src="img/gleb-shkarupa-.png" />
               <img class="gleb-shkarupa-main-2" src="img/gleb-shkarupa-main.png" />
               <div class="frame">
@@ -776,7 +1023,7 @@
                 <p class="text-wrapper-7">Identity for the exhibition space.</p>
               </div>
             </div>
-            <div class="WORK">
+            <div class="WORK work-card" data-tags="other">
               <img class="frame-4" src="img/frame-427318980.svg" />
               <div class="frame"><div class="text-wrapper-6">fox stickers | 2022</div></div>
             </div>

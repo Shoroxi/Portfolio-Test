@@ -8,6 +8,12 @@
       name="description"
       content="Portfolio of Shkarupa Gleb, a passionate digital artist and creative technologist with over a decade of experience in 3D art, animation, and web design."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/styleguide.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -172,15 +178,38 @@
         position: relative;
         align-self: stretch;
         width: 100%;
-        height: 170px;
-        border-radius: 12px;
-        border: 1px solid;
-        border-color: #272727;
-        background: linear-gradient(
-          0deg,
-          rgba(16, 16, 18, 1) 0%,
-          rgba(16, 16, 18, 1) 100%
-        );
+        height: 240px;
+        border-radius: 18px;
+        border: 1px dashed var(--border-color);
+        background: rgba(18, 18, 20, 0.65);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .element .TXT input[type="file"] {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .element .TXT-label {
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 16px;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .element .TXT-preview {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
       }
 
       .element .i {
@@ -283,7 +312,7 @@
 
       .element .HEAD-wrapper {
         align-items: center;
-        padding: 24px;
+        padding: 24px 32px;
         flex: 1;
         flex-grow: 1;
         background-color: #101012;
@@ -368,7 +397,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
-        padding: 24px;
+        padding: 24px 32px;
         align-self: stretch;
         width: 100%;
         background-color: #101012;
@@ -680,24 +709,441 @@
         transform: translateY(1px);
       }
 
+      .resume-page {
+        background: radial-gradient(circle at top, rgba(155, 91, 255, 0.25), transparent 60%),
+          radial-gradient(circle at 15% 30%, rgba(0, 214, 255, 0.1), transparent 35%),
+          var(--bg-primary);
+        gap: 48px;
+        padding: 32px 80px 80px;
+      }
+
+      /* Navigation styles - same as index.html */
+      .resume-page .top-nav {
+        position: sticky;
+        top: 24px;
+        z-index: 2;
+        backdrop-filter: blur(18px);
+        background: rgba(18, 18, 20, 0.9);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      }
+
+      .resume-page .nav-pill {
+        border-radius: 999px;
+        border: 1px solid transparent;
+        transition: border-color 0.2s ease, background 0.2s ease;
+      }
+
+      .resume-page .nav-pill.is-active {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: var(--border-color);
+      }
+
+      .resume-cta {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 24px 32px;
+        border-radius: 24px;
+        border: 1px solid var(--border-color);
+        background: linear-gradient(135deg, rgba(155, 91, 255, 0.25), rgba(5, 5, 5, 0.85));
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+        flex-wrap: wrap;
+      }
+
+      .resume-cta .cta-label {
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-size: 12px;
+        margin: 0 0 8px;
+      }
+
+      .resume-cta .cta-title {
+        font-family: "Bebas Neue-Bold", Helvetica;
+        font-size: 32px;
+        margin: 0;
+        letter-spacing: 0.04em;
+      }
+
+      .resume-cta .cta-text {
+        color: var(--text-secondary);
+        margin: 8px 0 0;
+        max-width: 520px;
+      }
+
+      .resume-cta .cta-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .resume-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+        gap: 32px;
+        width: 100%;
+        margin-top: 32px;
+      }
+
+      .resume-left,
+      .resume-right {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      @media (max-width: 960px) {
+        .resume-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Mobile Responsive Styles */
+      @media screen and (max-width: 768px) {
+        .element {
+          padding: 16px 20px 40px !important;
+          gap: 24px !important;
+        }
+
+        .resume-page {
+          padding: 16px 20px 40px !important;
+          gap: 32px !important;
+        }
+
+        .top-nav {
+          flex-direction: column;
+          gap: 12px;
+          padding: 12px 16px;
+        }
+
+        .top-nav .nav-links {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .nav-brand {
+          font-size: 18px;
+          letter-spacing: 0.2em;
+          text-align: center;
+        }
+
+        /* Fix navigation pill buttons size on mobile */
+        .top-nav .element,
+        .top-nav .div-wrapper {
+          padding: 8px 16px !important;
+          min-height: auto !important;
+          height: auto !important;
+          box-sizing: border-box !important;
+          transform: none !important;
+        }
+
+        .top-nav .element:active,
+        .top-nav .div-wrapper:active,
+        .top-nav .element:focus,
+        .top-nav .div-wrapper:focus {
+          transform: none !important;
+          scale: 1 !important;
+          padding: 8px 16px !important;
+        }
+
+        .resume-cta {
+          flex-direction: column;
+          padding: 20px 20px !important;
+          gap: 16px;
+        }
+
+        .resume-cta .cta-title {
+          font-size: 24px;
+        }
+
+        .resume-cta .cta-text {
+          font-size: 14px;
+        }
+
+        .resume-cta .cta-actions {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .resume-layout {
+          gap: 24px;
+          margin-top: 24px;
+        }
+
+        .resume-left,
+        .resume-right {
+          gap: 20px;
+        }
+
+        .text-wrapper-3 {
+          font-size: 28px !important;
+        }
+
+        .text-wrapper-4 {
+          font-size: 20px !important;
+        }
+
+        .p {
+          font-size: 14px !important;
+        }
+
+        .element .HEAD-wrapper,
+        .element .div-3 {
+          padding: 16px 20px !important;
+        }
+
+        .element .div-2 {
+          padding: 0 !important;
+        }
+
+        .resume-cta {
+          padding: 16px 20px !important;
+        }
+
+        /* Profile header section */
+        .element .TOP {
+          gap: 16px;
+        }
+
+        .element .TXT {
+          height: 180px !important;
+          border-radius: 12px;
+        }
+
+        .element .TXT-label {
+          font-size: 14px;
+        }
+
+        .element .i {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+          padding: 0px 16px;
+          margin-top: -60px;
+        }
+
+        .element .AVA {
+          width: 120px;
+          border-radius: 40px;
+        }
+
+        .element .AVA-2 {
+          height: 120px;
+          border-radius: 40px;
+        }
+
+        .element .HEAD {
+          width: 100%;
+        }
+
+        /* Forms and inputs */
+        .element .div-4 {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .element .frame-2,
+        .element .frame-3 {
+          padding: 10px 12px;
+          font-size: 14px;
+        }
+
+        .element .frame-3 {
+          min-height: 100px;
+          height: auto;
+        }
+
+        .element .frame-4 {
+          padding: 12px;
+          width: 100%;
+          justify-content: center;
+        }
+
+        /* Skills filters */
+        .element .FILTERS {
+          gap: 8px;
+        }
+
+        .element .div-wrapper-2 {
+          padding: 10px 16px !important;
+          font-size: 14px !important;
+        }
+
+        /* Contact form section */
+        .element .HEAD-4,
+        .element .HEAD-5,
+        .element .HEAD-6 {
+          gap: 8px;
+        }
+
+        .element .text-wrapper-6,
+        .element .text-wrapper-7 {
+          font-size: 14px !important;
+        }
+
+        /* Experience/Work section */
+        .element .l-wrapper {
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .element .l {
+          width: 100%;
+        }
+
+        /* Skills sections */
+        .element .HEAD-3 {
+          gap: 12px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .element {
+          padding: 12px 16px 32px !important;
+          gap: 20px !important;
+        }
+
+        .resume-page {
+          padding: 12px 16px 32px !important;
+          gap: 24px !important;
+        }
+
+        .top-nav {
+          padding: 10px 12px;
+        }
+
+        .nav-brand {
+          font-size: 16px;
+          letter-spacing: 0.15em;
+        }
+
+        /* Fix navigation pill buttons size on small mobile */
+        .top-nav .element,
+        .top-nav .div-wrapper {
+          padding: 8px 12px !important;
+          min-height: auto !important;
+          height: auto !important;
+        }
+
+        .top-nav .element:active,
+        .top-nav .div-wrapper:active,
+        .top-nav .element:focus,
+        .top-nav .div-wrapper:focus {
+          transform: none !important;
+          scale: 1 !important;
+          padding: 8px 12px !important;
+        }
+
+        .resume-cta {
+          padding: 16px 16px !important;
+        }
+
+        .resume-cta .cta-title {
+          font-size: 20px;
+        }
+
+        .resume-layout {
+          gap: 20px;
+        }
+
+        .text-wrapper-3 {
+          font-size: 24px !important;
+        }
+
+        .text-wrapper-4 {
+          font-size: 18px !important;
+        }
+
+        /* Small mobile - profile header */
+        .element .TXT {
+          height: 150px !important;
+        }
+
+        .element .i {
+          margin-top: -50px;
+          padding: 0px 12px;
+        }
+
+        .element .AVA {
+          width: 100px;
+        }
+
+        .element .AVA-2 {
+          height: 100px;
+        }
+
+        /* Forms */
+        .element .frame-2,
+        .element .frame-3 {
+          padding: 8px 10px;
+          font-size: 12px;
+        }
+
+        .element .frame-4 {
+          padding: 10px;
+          font-size: 12px;
+        }
+
+        .element .div-wrapper-2 {
+          padding: 8px 12px !important;
+          font-size: 12px !important;
+        }
+
+        /* Skills and sections */
+        .element .FILTERS {
+          gap: 6px;
+        }
+
+        .element .HEAD-wrapper,
+        .element .div-3 {
+          padding: 12px 16px !important;
+        }
+
+        .element .div-2 {
+          padding: 0 !important;
+        }
+
+        .resume-cta {
+          padding: 12px 16px !important;
+        }
+
+        /* Additional small mobile adjustments */
+        .element .l-wrapper {
+          gap: 12px;
+        }
+
+        .element .HEAD-3 {
+          gap: 10px;
+        }
+
+        .element .text-wrapper-6 {
+          font-size: 12px !important;
+        }
+      }
+
     </style>
   </head>
 
 
   <body>
-    <div class="element">
+    <div class="element resume-page">
 
-      <header class="BTN">
-        <nav class="div1">
-          <div class="element"><a href="index.html" class="text-wrapper">Portfolio</a></div>
-          <div class="div-wrapper"><a href="rezume.html" class="text-wrapper">Profile</a></div>
+      <header class="top-nav">
+        <nav class="nav-links">
+          <div class="element nav-pill"><a href="index.html" class="text-wrapper">Portfolio</a></div>
+          <div class="div-wrapper nav-pill is-active"><a href="rezume.html" class="text-wrapper">Profile</a></div>
         </nav>
-        <button class="button"><a href="rezume.html" class="text-wrapper-2">Contact me</a></button>
+        <div class="nav-brand">SHARHEX LAB</div>
       </header>
 
       <main class="CONTENT">
         <section class="TOP">
-          <div class="TXT" role="img" aria-label="Creative background illustration"></div>
+          <label class="TXT" role="img" aria-label="Creative background illustration">
+            <span class="TXT-label">Загрузить обложку профиля (JPG/PNG)</span>
+            <input type="file" id="bannerUpload" accept="image/*" aria-label="Upload profile banner" />
+            <img src="" alt="" class="TXT-preview" id="bannerPreview" />
+          </label>
           <div class="i">
             <div class="AVA">
               <img src="./img/AVA.png" alt="Profile photo of Shkarupa Gleb" class="AVA-2" />
@@ -708,8 +1154,8 @@
             </header>
           </div>
         </section>
-        <div class="l-wrapper">
-          <div class="l">
+        <div class="resume-layout">
+          <div class="resume-left">
             <section class="div-2">
               <article class="HEAD-wrapper">
                 <div class="HEAD-2">
@@ -717,51 +1163,11 @@
                   <p class="p">
                     I&#39;m a passionate digital artist and creative technologist with over a decade of experience in 3D
                     art, animation, and web design. My work explores the intersection of technology and art, creating
-                    immersive experiences and telling compelling stories. <br />
-                    <br />I thrive on bringing ideas to life, whether it&#39;s through a complex 3D model, an intuitive
-                    user interface, or an engaging animation. I am constantly learning and exploring new tools to push
-                    the boundaries of my creativity.
+                    immersive experiences and telling compelling stories.
                   </p>
-                </div>
-              </article>
-            </section>
-            <section class="div-2">
-              <article class="HEAD-wrapper">
-                <div class="HEAD-3">
-                  <h2 class="text-wrapper-4">Hard Skills</h2>
-                  <div class="FILTERS" role="group" aria-label="Hard skills filter">
-                    <button type="button" class="div-wrapper-2" aria-pressed="true">
-                      <span class="text-wrapper-5">All</span>
-                    </button>
-                    <button type="button" class="div-wrapper-2" aria-pressed="false">
-                      <span class="text-wrapper-5">3D Art</span>
-                    </button>
-                    <button type="button" class="div-wrapper-2" aria-pressed="false">
-                      <span class="text-wrapper-5">Web Design</span>
-                    </button>
-                    <button type="button" class="div-wrapper-2" aria-pressed="false">
-                      <span class="text-wrapper-5">Animation</span>
-                    </button>
-                  </div>
-                </div>
-              </article>
-              <article class="HEAD-wrapper">
-                <div class="HEAD-3">
-                  <h2 class="text-wrapper-4">Soft Skills</h2>
-                  <div class="FILTERS" role="group" aria-label="Soft skills filter">
-                    <button type="button" class="div-wrapper-2" aria-pressed="true">
-                      <span class="text-wrapper-5">All</span>
-                    </button>
-                    <button type="button" class="div-wrapper-2" aria-pressed="false">
-                      <span class="text-wrapper-5">3D Art</span>
-                    </button>
-                    <button type="button" class="div-wrapper-2" aria-pressed="false">
-                      <span class="text-wrapper-5">Web Design</span>
-                    </button>
-                    <button type="button" class="div-wrapper-2" aria-pressed="false">
-                      <span class="text-wrapper-5">Animation</span>
-                    </button>
-                  </div>
+                  <p class="p">
+                    Half of my week belongs to experimental 3D pipelines, shader art, and prototyping new interactions. The other half I dedicate to creative direction, mentoring, and polishing shipped products so they feel alive.
+                  </p>
                 </div>
               </article>
             </section>
@@ -814,11 +1220,98 @@
               </form>
             </section>
           </div>
+          <div class="resume-right">
+            <section class="div-2">
+              <article class="HEAD-wrapper">
+                <div class="HEAD-3">
+                  <h2 class="text-wrapper-4">Hard Skills</h2>
+                  <div class="FILTERS" role="group" aria-label="Hard skills filter">
+                    <button type="button" class="div-wrapper-2" aria-pressed="true">
+                      <span class="text-wrapper-5">All</span>
+                    </button>
+                    <button type="button" class="div-wrapper-2" aria-pressed="false">
+                      <span class="text-wrapper-5">3D Art</span>
+                    </button>
+                    <button type="button" class="div-wrapper-2" aria-pressed="false">
+                      <span class="text-wrapper-5">Web Design</span>
+                    </button>
+                    <button type="button" class="div-wrapper-2" aria-pressed="false">
+                      <span class="text-wrapper-5">Animation</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+              <article class="HEAD-wrapper">
+                <div class="HEAD-3">
+                  <h2 class="text-wrapper-4">Soft Skills</h2>
+                  <div class="FILTERS" role="group" aria-label="Soft skills filter">
+                    <button type="button" class="div-wrapper-2" aria-pressed="true">
+                      <span class="text-wrapper-5">All</span>
+                    </button>
+                    <button type="button" class="div-wrapper-2" aria-pressed="false">
+                      <span class="text-wrapper-5">3D Art</span>
+                    </button>
+                    <button type="button" class="div-wrapper-2" aria-pressed="false">
+                      <span class="text-wrapper-5">Web Design</span>
+                    </button>
+                    <button type="button" class="div-wrapper-2" aria-pressed="false">
+                      <span class="text-wrapper-5">Animation</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </section>
+            <section class="resume-cta">
+              <div>
+                <p class="cta-label">Skill Lab</p>
+                <h3 class="cta-title">Подтверди актуальность навыков</h3>
+                <p class="cta-text">
+                  Как и на hh.ru, ты можешь быстро показать, что hard skills живут не только в описании. Пройди интерактивный тест по 3D Basics и приложи свежий результат к отклику.
+                </p>
+              </div>
+              <div class="cta-actions">
+                <a class="ghost-btn" href="test/index.html">Формат и вопросы</a>
+                <a class="primary-btn" href="test/index.html?test=3d-basics">Пройти 3D Basics</a>
+              </div>
+            </section>
+          </div>
         </div>
       </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/app.js"></script>
+    <script>
+      (function () {
+        const fileInput = document.getElementById("bannerUpload");
+        const preview = document.getElementById("bannerPreview");
+        const label = document.querySelector(".TXT-label");
+
+        if (!fileInput || !preview || !label) {
+          return;
+        }
+
+        fileInput.addEventListener("change", (event) => {
+          const file = event.target.files && event.target.files[0];
+          if (!file) {
+            preview.style.display = "none";
+            label.style.opacity = 1;
+            preview.src = "";
+            return;
+          }
+
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const result = e.target?.result;
+            if (typeof result === "string") {
+              preview.src = result;
+              preview.style.display = "block";
+              label.style.opacity = 0;
+            }
+          };
+          reader.readAsDataURL(file);
+        });
+      })();
+    </script>
 
 
   </body>
