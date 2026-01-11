@@ -248,10 +248,58 @@ button {
 
 .workspace-header {
   display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.question-info {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+.question-actions {
+  display: flex;
+  gap: 12px;
   align-items: center;
+}
+
+.timer-display {
+  font-family: "Inter", monospace;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 8px 16px;
+  border-radius: 12px;
+  letter-spacing: 0.05em;
+  min-width: 70px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.timer-display.timer-warning {
+  color: var(--danger);
+  background: rgba(255, 77, 109, 0.1);
+  animation: timer-pulse 1s ease-in-out infinite alternate;
+}
+
+.timer-display.timer-critical {
+  color: #fff;
+  background: var(--danger);
+  animation: timer-pulse-fast 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes timer-pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+@keyframes timer-pulse-fast {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
 }
 
 .progress-bar {
@@ -465,6 +513,16 @@ button {
     font-size: 20px;
   }
 
+  .question-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .question-actions {
+    align-self: flex-end;
+  }
+
   .question-card {
     padding: 16px;
     gap: 12px;
@@ -525,6 +583,17 @@ button {
 
   .question-title {
     font-size: 18px;
+  }
+
+  .question-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .question-actions {
+    align-self: stretch;
+    justify-content: space-between;
   }
 
   .option-btn {
