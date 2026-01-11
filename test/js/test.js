@@ -5,6 +5,7 @@
       title: "Основы 3D",
       difficulty: "Начинающий",
       duration: "8 вопросов · ~4 мин",
+      timeLimit: 300, // 5 minutes in seconds
       tags: ["пайплайн", "софт"],
       description: "Разминка с основными концепциями 3D моделирования и рендеринга.",
       color: "#9b5bff",
@@ -80,6 +81,12 @@
     currentIndex: 0,
     selectedOption: null,
     answers: [],
+    timer: {
+      timeLimit: 0,
+      remainingTime: 0,
+      isRunning: false,
+      intervalId: null,
+    },
   };
 
   const testListEl = document.getElementById("testList");
@@ -100,6 +107,58 @@
     state.currentIndex = 0;
     state.selectedOption = null;
     state.answers = [];
+    stopTimer();
+    state.timer.timeLimit = 0;
+    state.timer.remainingTime = 0;
+    state.timer.isRunning = false;
+  }
+
+  function startTimer(timeLimit) {
+    if (state.timer.isRunning) return;
+
+    state.timer.timeLimit = timeLimit;
+    state.timer.remainingTime = timeLimit;
+    state.timer.isRunning = true;
+    state.timer.intervalId = setInterval(updateTimer, 1000);
+    updateTimerDisplay();
+  }
+
+  function stopTimer() {
+    if (!state.timer.isRunning) return;
+
+    state.timer.isRunning = false;
+    if (state.timer.intervalId) {
+      clearInterval(state.timer.intervalId);
+      state.timer.intervalId = null;
+    }
+  }
+
+  function updateTimer() {
+    if (!state.timer.isRunning) return;
+
+    state.timer.remainingTime = Math.max(0, state.timer.remainingTime - 1);
+    updateTimerDisplay();
+
+    // Auto-finish test when time runs out
+    if (state.timer.remainingTime === 0) {
+      stopTimer();
+      renderResults();
+    }
+  }
+
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+  }
+
+  function updateTimerDisplay() {
+    const timerElement = document.getElementById('timerDisplay');
+    if (timerElement) {
+      timerElement.textContent = formatTime(state.timer.remainingTime);
+      timerElement.classList.toggle('timer-warning', state.timer.remainingTime <= 30 && state.timer.remainingTime > 0);
+      timerElement.classList.toggle('timer-critical', state.timer.remainingTime <= 10);
+    }
   }
 
   function renderTestCards() {
@@ -170,6 +229,7 @@
     state.selectedOption = null;
     state.answers = [];
 
+    startTimer(test.timeLimit);
     renderWorkspace();
   }
 
@@ -205,6 +265,7 @@
           <div class="options-list">
             <div class="status-text">Сложность: ${test.difficulty}</div>
             <div class="status-text">Длительность: ${test.duration}</div>
+            <div class="status-text">Ограничение по времени: ${formatTime(test.timeLimit)}</div>
             <div class="status-text">Вопросов: ${test.questions.length}</div>
             <div class="status-text">Темы: ${test.tags.join(", ")}</div>
           </div>
@@ -234,11 +295,14 @@
     workspaceEl.innerHTML = `
     <div class="workspace-active">
       <div class="workspace-header">
-        <div>
+        <div class="question-info">
           <p class="question-meta">Вопрос ${currentIndex + 1} из ${total}</p>
-          <h3 class="question-title">${question.title}</h3>
+          <div class="question-actions">
+            <div class="timer-display" id="timerDisplay">00:00</div>
+            <button class="ghost-btn" type="button" id="exitTestBtn">Выход</button>
+          </div>
         </div>
-        <button class="ghost-btn" type="button" id="exitTestBtn">Выход</button>
+        <h3 class="question-title">${question.title}</h3>
       </div>
 
       <div class="progress-bar">
@@ -278,6 +342,8 @@
       resetState();
       renderWorkspace();
     });
+
+    updateTimerDisplay();
   }
 
   function selectOption(index) {
@@ -317,6 +383,7 @@
   }
 
   function renderResults() {
+    stopTimer();
     const { currentTest, answers } = state;
     const total = currentTest.questions.length;
     const score = Math.round((answers.filter((item) => item.isCorrect).length / total) * 100);
@@ -340,7 +407,8 @@
         <div class="progress-fill" style="width:${score}%"></div>
         </div>
         <div class="results-summary">
-          <div>Время потрачено: <span>~${Math.max(2, total)} мин</span></div>
+          <div>Время потрачено: <span>${formatTime(state.timer.timeLimit - state.timer.remainingTime)}</span></div>
+          <div>Ограничение по времени: <span>${formatTime(state.timer.timeLimit)}</span></div>
           <div>Сложность: <span>${currentTest.difficulty}</span></div>
           <div>Статус: <span>${score >= 70 ? "Готов к следующему уровню" : "Рекомендуется повторить"}</span></div>
         </div>
